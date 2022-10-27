@@ -1,3 +1,11 @@
 <resources>
-    <string name="app_name">InstagramClone</string>
+	<string name="app_name">
+		InstagramClone
+	</string>
+	<string name="facebook_app_id">
+		899198041063032
+	</string>
+	<string name="facebook_client_token">
+		5ca7ecd8cb07e4c63e053bea2d95290f
+	</string>
 </resources>

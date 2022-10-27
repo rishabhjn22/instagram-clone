@@ -17,6 +17,9 @@
 
 #import <react/config/ReactNativeConfig.h>
 
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
+
+
 
 
 static NSString *const kRNConcurrentRoot = @"concurrentRoot";
@@ -32,9 +35,21 @@ static NSString *const kRNConcurrentRoot = @"concurrentRoot";
 
 @implementation AppDelegate
 
+- (BOOL)application:(UIApplication *)app
+            openURL:(NSURL *)url
+            options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options
+{
+  return [[FBSDKApplicationDelegate sharedInstance]application:app
+                                                       openURL:url
+                                                       options:options];
+}
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     [FIRApp configure];
+
+    [[FBSDKApplicationDelegate sharedInstance] application:application
+                       didFinishLaunchingWithOptions:launchOptions];
  
   RCTAppSetupPrepareApp(application);
   
@@ -76,6 +91,8 @@ static NSString *const kRNConcurrentRoot = @"concurrentRoot";
   // Switch this bool to turn on and off the concurrent root
   return true;
 }
+
+
 
 - (NSDictionary *)prepareInitialProps
 {

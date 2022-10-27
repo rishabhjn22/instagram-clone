@@ -1,16 +1,24 @@
 import React from 'react';
+import {useColorScheme} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 import Splash from './src/views/Auth/Splash';
 import Welcome from './src/views/Auth/Welcome';
 import SignIn from './src/views/Auth/SignIn';
 import SignUp from './src/views/Auth/SignUp';
+import {darkTheme, lightTheme} from './src/utils/colors';
 
 function App() {
   const RootStack = createStackNavigator();
+  const scheme = useColorScheme();
 
   return (
-    <NavigationContainer>
+    <NavigationContainer
+      theme={
+        scheme === 'dark'
+          ? {colors: darkTheme, dark: true}
+          : {colors: lightTheme, dark: false}
+      }>
       <RootStack.Navigator>
         <RootStack.Screen
           options={{headerShown: false}}

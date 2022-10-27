@@ -2,6 +2,7 @@
 import {View, Image, StyleSheet} from 'react-native';
 import React, {useEffect} from 'react';
 import {SplashPageProps} from '../../types/propTypes';
+import {horizontalScale, verticalScale} from '../../utils/responsive';
 
 function Splash({navigation}: SplashPageProps) {
   useEffect(() => {
@@ -27,8 +28,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   image: {
-    height: 100,
-    width: 100,
+    height: verticalScale(100),
+    width: horizontalScale(100),
   },
 });
 
