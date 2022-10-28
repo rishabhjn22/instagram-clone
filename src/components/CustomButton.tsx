@@ -13,9 +13,13 @@ export default function CustomButton({
   style,
   name,
   color,
+  onPress,
 }: CustomButtonProps) {
   return (
-    <TouchableOpacity style={[styles.container, style]} activeOpacity={0.8}>
+    <TouchableOpacity
+      style={[styles.container, style]}
+      activeOpacity={0.8}
+      onPress={onPress}>
       <MaterialCommunityIcons name={name} size={20} color={color} />
       <Text style={styles.textStyle}>{title}</Text>
     </TouchableOpacity>
@@ -24,7 +28,6 @@ export default function CustomButton({
 
 const styles = StyleSheet.create({
   container: {
-    // borderWidth: 1,
     paddingVertical: verticalScale(15),
     alignItems: 'center',
     borderRadius: moderateScale(10),

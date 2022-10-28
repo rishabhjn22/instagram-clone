@@ -1,6 +1,8 @@
 const colors = {
   primary: '#8a3ab9',
   secondary: '#bc2a8d',
+  text: '#060606',
+  grey: '#CACACA',
   //   #fccc63
   //   #fbad50
 };

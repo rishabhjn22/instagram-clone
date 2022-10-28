@@ -10,8 +10,9 @@ import {
   moderateScale,
   verticalScale,
 } from '../../utils/responsive';
+import {WelcomeProps} from '../../types/propTypes';
 
-export default function Welcome() {
+export default function Welcome({navigation}: WelcomeProps) {
   // const {colors} = useTheme();
 
   // async function onFacebookButtonPress() {
@@ -78,6 +79,7 @@ export default function Welcome() {
           style={{backgroundColor: '#DB3F3A'}}
           name="gmail"
           color="#fff"
+          onPress={() => navigation.navigate('SignIn')}
         />
       </View>
       <View style={styles.buttonCont}>
