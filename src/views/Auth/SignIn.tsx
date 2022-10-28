@@ -1,10 +1,11 @@
-import {View, Text} from 'react-native';
+import {View} from 'react-native';
 import React from 'react';
+import Input from '../../components/Input';
 
 export default function SignIn() {
   return (
     <View>
-      <Text>SignIn</Text>
+      <Input />
     </View>
   );
 }

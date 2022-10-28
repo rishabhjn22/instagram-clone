@@ -1,5 +1,5 @@
 import React from 'react';
-import {useColorScheme} from 'react-native';
+import {SafeAreaView, StyleSheet, useColorScheme} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 import Splash from './src/views/Auth/Splash';
@@ -13,36 +13,44 @@ function App() {
   const scheme = useColorScheme();
 
   return (
-    <NavigationContainer
-      theme={
-        scheme === 'dark'
-          ? {colors: darkTheme, dark: true}
-          : {colors: lightTheme, dark: false}
-      }>
-      <RootStack.Navigator>
-        <RootStack.Screen
-          options={{headerShown: false}}
-          name="Splash"
-          component={Splash}
-        />
-        <RootStack.Screen
-          options={{headerShown: false}}
-          name="Welcome"
-          component={Welcome}
-        />
-        <RootStack.Screen
-          options={{headerShown: false}}
-          name="SignIn"
-          component={SignIn}
-        />
-        <RootStack.Screen
-          options={{headerShown: false}}
-          name="SignUp"
-          component={SignUp}
-        />
-      </RootStack.Navigator>
-    </NavigationContainer>
+    <SafeAreaView style={styles.container}>
+      <NavigationContainer
+        theme={
+          scheme === 'dark'
+            ? {colors: darkTheme, dark: true}
+            : {colors: lightTheme, dark: false}
+        }>
+        <RootStack.Navigator>
+          <RootStack.Screen
+            options={{headerShown: false}}
+            name="Splash"
+            component={Splash}
+          />
+          <RootStack.Screen
+            options={{headerShown: false}}
+            name="Welcome"
+            component={Welcome}
+          />
+          <RootStack.Screen
+            options={{headerShown: false}}
+            name="SignIn"
+            component={SignIn}
+          />
+          <RootStack.Screen
+            options={{headerShown: false}}
+            name="SignUp"
+            component={SignUp}
+          />
+        </RootStack.Navigator>
+      </NavigationContainer>
+    </SafeAreaView>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
+});
 
 export default App;
