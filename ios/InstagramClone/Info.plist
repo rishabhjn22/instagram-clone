@@ -73,7 +73,7 @@
 <key>FacebookClientToken</key>
 <string>5ca7ecd8cb07e4c63e053bea2d95290f</string>
 <key>FacebookDisplayName</key>
-<string>SocialClone</string>
+<string>InstagramClone</string>
 
 <!-- for Login, Share, App Invites, etc -->
 <key>LSApplicationQueriesSchemes</key>
